@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Input } from 'antd';
+import { Button, Input, Form } from 'antd';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { componentTypes } from '../components/component-types';
@@ -36,12 +36,13 @@ class ComponentEditor extends Component<ComponentEditorProps> {
         </p>
 
         {Object.keys(attr).map((key) => (
-            <Input
-                key={key}
-                placeholder={key}
-                value={attr![key] || ''}
-                onChange={(e) => onComponentEdit(component.id, { ...attr, [key]: e.target.value })}
-            />
+            <Form.Item key={key} label={key} >
+              <Input
+                  placeholder={key}
+                  value={attr![key] || ''}
+                  onChange={(e) => onComponentEdit(component.id, { ...attr, [key]: e.target.value })}
+              />
+            </Form.Item>
         ))}
 
         <AntButton type="danger" onClick={() => onRemove(component.id)}>Delete</AntButton>
