@@ -1,0 +1,19 @@
+
+.DropdownComponent {
+  width: 100%;
+  .ant-select {
+    width: 100%;
+  }
+}
+
+.DataTableComponent {
+  background: #fff;
+  border-radius: 4px;
+
+  .ant-table-body {
+    overflow: scroll;
+    table {
+      min-width: 400px;
+    }
+  }
+}

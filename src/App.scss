@@ -1,0 +1,17 @@
+.App {
+  height: 100vh;
+
+  section {
+    height: 100%;
+  }
+
+  .App-Header {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .App-Right-Sider {
+    border-left: 1px solid #ddd;
+    background: #fff;
+  }
+}

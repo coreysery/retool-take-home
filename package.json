@@ -7,10 +7,20 @@
     "@types/node": "11.13.0",
     "@types/react": "16.8.13",
     "@types/react-dom": "16.8.3",
+    "antd": "^3.16.2",
+    "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-draggable": "^3.2.1",
+    "react-redux": "^6.0.1",
     "react-scripts": "2.1.8",
+    "redux": "^4.0.1",
+    "redux-saga": "^1.0.2",
+    "reselect": "^4.0.0",
     "typescript": "3.4.2"
+  },
+  "resolutions": {
+    "@types/react": "16.8.8"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,5 +36,13 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@types/enzyme": "^3.9.1",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/react-redux": "^7.0.6",
+    "@types/reselect": "^2.2.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1"
+  }
 }

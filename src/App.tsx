@@ -1,28 +1,49 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout } from 'antd';
+import './App.scss';
+import { connect } from 'react-redux';
+import ComponentEditor from './sideview/ComponentEditor';
+import { IComponent, selectComponentsState, selectSelectedComponent } from './state/components';
+import { AppState } from './state/types';
+import ComponentPicker from './sideview/ComponentPicker';
+import Editor from './Editor';
 
-class App extends Component {
+const { Header, Sider, Content } = Layout;
+
+interface AppProps {
+  selectedComponent?: IComponent;
+}
+
+class App extends Component<AppProps> {
   render() {
+    const { selectedComponent } = this.props;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+
+        <Layout>
+          <Header className="App-Header">
+            <h3>
+              🦄 Retool 0.1
+            </h3>
+          </Header>
+          <Layout>
+            <Content>
+              <Editor />
+            </Content>
+
+            <Sider width={300} theme="light" className="App-Right-Sider">
+              {selectedComponent ? <ComponentEditor component={selectedComponent} /> : <ComponentPicker />}
+            </Sider>
+          </Layout>
+        </Layout>
+
       </div>
     );
   }
 }
 
-export default App;
+export default connect(
+    (state: AppState) => ({
+      selectedComponent: selectSelectedComponent(state),
+    })
+)(App);

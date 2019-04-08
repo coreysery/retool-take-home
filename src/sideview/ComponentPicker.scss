@@ -1,0 +1,40 @@
+
+.ComponentPicker {
+  padding: 12px 6px;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+.ComponentItem {
+  margin-bottom: 12px;
+  cursor: pointer;
+
+  .ComponentItem-Icon {
+    padding: 8px;
+    background: lighten(#1890ff, 35%);
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    i {
+      font-size: 20px;
+      color: #1890ff;
+    }
+  }
+
+  .ant-card-meta-title {
+    margin-bottom: 0 !important;
+  }
+
+  &:hover {
+    background: #fafafa;
+    border-color: #ddd;
+  }
+}
+
+.ComponentSkeleton {
+  background: rgba(#1890ff, 0.3);
+}
